@@ -4,14 +4,11 @@ class CalendarsController < ApplicationController
   def index
     get_Week
     @plan = Plan.new
-    getWeek
-    @plan =plan.new
-
   end
 
   # 予定の保存
   def create
-    plan.create(plan_params)
+    Plan.create(plan_params)
     redirect_to action: :index
   end
 
